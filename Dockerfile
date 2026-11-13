@@ -36,6 +36,7 @@ COPY ./config/webpack ./config/webpack
 COPY ./config/shakapacker.yml ./config/shakapacker.yml
 COPY ./postcss.config.js ./postcss.config.js
 COPY ./tailwind.config.js ./tailwind.config.js
+COPY ./tailwind.jana.tokens.js ./tailwind.jana.tokens.js
 COPY ./tailwind.form.config.js ./tailwind.form.config.js
 COPY ./tailwind.dynamic.config.js ./tailwind.dynamic.config.js
 COPY ./tailwind.application.config.js ./tailwind.application.config.js

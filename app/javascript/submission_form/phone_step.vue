@@ -3,7 +3,7 @@
     <label
       v-if="showFieldNames"
       :for="isCodeSent ? 'one_time_code' : field.uuid"
-      class="label text-xl sm:text-2xl py-0 mb-2 sm:mb-3.5 field-name-label"
+      class="block text-base/6 font-semibold text-jana-ink-90 mb-1.5 field-name-label"
       :class="{ 'mb-2': !field.description }"
     >
       <MarkdownContent
@@ -31,7 +31,7 @@
       <div v-if="isCodeSent">
         <input
           id="one_time_code"
-          class="base-input !text-2xl w-full text-center"
+          class="base-input w-full text-center"
           name="one_time_code"
           type="text"
           autocomplete="one-time-code"
@@ -104,7 +104,7 @@
           ref="phone"
           :value="defaultValue && detectedPhoneValueDialCode ? phoneValue.split('+' + detectedPhoneValueDialCode).slice(-1).join('') : phoneValue"
           :readonly="!!defaultValue"
-          class="base-input !text-2xl !rounded-l-none !border-l-0 !outline-none w-full"
+          class="base-input !rounded-l-none !border-l-0 !outline-none w-full"
           autocomplete="tel"
           type="tel"
           inputmode="tel"

@@ -7,7 +7,7 @@
       <label
         v-if="showFieldNames"
         :for="field.uuid"
-        class="label text-xl sm:text-2xl py-0 field-name-label"
+        class="block text-base/6 font-semibold text-jana-ink-90 field-name-label"
       >
         <MarkdownContent
           v-if="field.title"
@@ -54,7 +54,7 @@
         v-model="value"
         :min="validationMin"
         :max="validationMax"
-        class="base-input !text-2xl text-center w-full"
+        class="base-input text-center w-full"
         :required="field.required"
         :aria-describedby="field.description ? field.uuid + '-desc' : undefined"
         :type="inputType"

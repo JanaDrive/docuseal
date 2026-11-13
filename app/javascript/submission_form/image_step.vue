@@ -4,7 +4,7 @@
       <label
         v-if="showFieldNames"
         :for="field.uuid"
-        class="label text-xl sm:text-2xl py-0 field-name-label"
+        class="block text-base/6 font-semibold text-jana-ink-90 field-name-label"
       >
         <MarkdownContent
           v-if="field.title"

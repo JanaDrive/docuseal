@@ -1,0 +1,312 @@
+// Jana's design system on DocuSeal's markup.
+//
+// DocuSeal writes its screens in daisyUI component classes (`btn btn-sm
+// btn-outline`, `input`, `card`, `checkbox`). Rather than rewrite every
+// template, this file restates those classes in the recipes the Jana hub
+// uses for the same components (hub/templatetags/ui_tags.py and
+// templates/cotton/ui/ in the Jana monorepo): Button, Input, Select,
+// Textarea, Checkbox, Radio, Card, Heading, Link.
+//
+// Imported last by application.scss and form.scss, so each rule lands after
+// daisyUI's own and wins at equal specificity.
+
+// ---------------------------------------------------------------- Typography
+// The warm clinic type system: Instrument Sans for running text, Fraunces
+// (the display face) for the headings a page leads with, tabular JetBrains
+// Mono for figures and codes.
+body {
+  @apply font-sans text-default antialiased;
+}
+
+h1,
+h2,
+h1.font-bold,
+h2.font-bold,
+h1.font-semibold,
+h2.font-semibold {
+  @apply font-display font-medium tracking-normal;
+}
+
+h3,
+h4 {
+  @apply font-bold;
+}
+
+code,
+kbd,
+pre {
+  @apply font-mono;
+}
+
+.link,
+a.underline {
+  @apply underline-offset-2 decoration-1 hover:decoration-[1.5px];
+}
+
+// -------------------------------------------------------------------- Button
+// One recipe for every button: Jana's rounded-lg, bold label, press scale
+// and green focus ring. Size follows the hub's control-height ladder:
+// xs 28px, sm 32px, md 40px.
+.btn {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg border-0 px-5 py-2 h-auto min-h-10 text-base/6 font-bold whitespace-nowrap normal-case shadow-none;
+  @apply transition duration-200 ease-out select-none active:scale-[0.97];
+  @apply bg-jana-ink-10 text-jana-ink-70 ring-1 ring-inset ring-jana-ink-20 hover:bg-jana-ink-20 hover:ring-jana-ink-30;
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jana-green-50/50;
+}
+
+.btn-md {
+  @apply min-h-10 px-5 py-2 text-base/6;
+}
+
+.btn-sm {
+  @apply min-h-8 px-3.5 py-1.5 text-sm/5;
+}
+
+.btn-xs {
+  @apply min-h-7 px-3 py-1.5 text-xs/4;
+}
+
+.btn-lg {
+  @apply min-h-10 px-5 py-2 text-base/6;
+}
+
+// Solid, default tone.
+.btn-neutral,
+.btn-neutral.btn-active {
+  @apply bg-jana-ink-80 text-white ring-0 hover:bg-jana-ink-70 hover:text-white;
+}
+
+// Soft, default tone: DocuSeal's "primary" is its quiet grey button.
+.btn-primary {
+  @apply bg-jana-ink-10 text-jana-ink-70 ring-1 ring-inset ring-jana-ink-20 hover:bg-jana-ink-20 hover:text-jana-ink-70 hover:ring-jana-ink-30;
+}
+
+// Outline, default tone. daisyUI fills an outline button on hover; Jana's
+// only tints it.
+.btn-outline,
+.btn-outline.btn-neutral,
+.btn-outline.btn-primary {
+  @apply bg-transparent text-jana-ink-70 ring-1 ring-inset ring-jana-ink-20;
+}
+
+.btn-outline:hover,
+.btn-outline.btn-neutral:hover,
+.btn-outline.btn-primary:hover {
+  @apply bg-jana-ink-10 text-jana-ink-70 ring-jana-ink-30;
+}
+
+// Flat.
+.btn-ghost {
+  @apply bg-transparent text-jana-ink-70 ring-0 hover:bg-jana-ink-10 hover:text-jana-ink-70;
+}
+
+.btn-success {
+  @apply bg-jana-green-60 text-white ring-0 hover:bg-jana-green-50 hover:text-white;
+}
+
+.btn-info {
+  @apply bg-jana-info-60 text-white ring-0 hover:bg-jana-info-50 hover:text-white;
+}
+
+.btn-warning {
+  @apply bg-jana-warning-60 text-white ring-0 hover:bg-jana-warning-50 hover:text-white;
+}
+
+.btn-error {
+  @apply bg-jana-danger-60 text-white ring-0 hover:bg-jana-danger-50 hover:text-white;
+}
+
+.btn-outline.btn-error {
+  @apply bg-transparent text-jana-danger-70 ring-1 ring-inset ring-jana-danger-70/20;
+}
+
+.btn-outline.btn-error:hover {
+  @apply bg-jana-danger-70/10 text-jana-danger-80 ring-jana-danger-70/35;
+}
+
+// The icon-only button is the one round button.
+.btn-circle,
+.btn-square {
+  @apply size-10 min-h-0 p-0 shrink-0;
+}
+
+.btn-circle {
+  @apply rounded-full;
+}
+
+.btn-circle.btn-sm,
+.btn-square.btn-sm {
+  @apply size-8;
+}
+
+.btn-circle.btn-xs,
+.btn-square.btn-xs {
+  @apply size-7;
+}
+
+.btn[disabled],
+.btn:disabled,
+.btn.btn-disabled {
+  @apply bg-jana-ink-20 text-jana-ink-40 ring-0 cursor-not-allowed active:scale-100;
+}
+
+// ------------------------------------------------- Input, Select, Textarea
+// The hub's control surface: white, an inset shadow, an ink-30 edge, and on
+// focus a green edge with a soft green ring while the field presses in.
+.input,
+.select,
+.textarea {
+  @apply rounded-lg border border-jana-ink-30 bg-surface text-base/6 font-medium text-jana-ink-80 shadow-inset placeholder:text-placeholder;
+  @apply transition-[background,box-shadow,border-color] duration-200 ease-out;
+}
+
+.input,
+.select {
+  @apply h-10 min-h-10;
+}
+
+.input-sm,
+.select-sm {
+  @apply h-8 min-h-8 text-sm/6;
+}
+
+.input-xs,
+.select-xs {
+  @apply h-7 min-h-7 text-xs/5;
+}
+
+.textarea {
+  @apply min-h-[104px] py-2 px-3.5;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus,
+.input:focus-within {
+  @apply outline-none border-jana-green-50 ring-4 ring-jana-green-50/25 shadow-inset-deep;
+}
+
+.input[disabled],
+.select[disabled],
+.textarea[disabled] {
+  @apply bg-jana-ink-10 text-jana-ink-40 shadow-none cursor-not-allowed border-jana-ink-20;
+}
+
+// base-input draws its own edge as an outline, so the border comes off.
+.base-input,
+.base-textarea,
+.select.base-input {
+  @apply border-0;
+}
+
+.select.base-input:focus {
+  @apply outline outline-1 outline-offset-0 outline-jana-green-50;
+}
+
+.label {
+  @apply text-sm/5 font-semibold text-default;
+}
+
+.label-text {
+  @apply text-sm/5 font-semibold text-default;
+}
+
+// ---------------------------------------------------------- Checkbox, Radio
+// Green when picked, an ink-40 edge at rest. daisyUI reads these as HSL
+// channels: green-50 #98B068 is 80 31% 55%.
+.checkbox,
+.radio {
+  --chkbg: 80 31% 55%;
+  --chkfg: 0 0% 100%;
+  @apply border border-jana-ink-40 bg-surface transition-colors hover:border-jana-ink-60;
+}
+
+.checkbox:checked,
+.checkbox[aria-checked='true'],
+.radio:checked,
+.radio[aria-checked='true'] {
+  @apply border-transparent;
+}
+
+.checkbox:focus-visible,
+.radio:focus-visible {
+  @apply outline-none ring-2 ring-jana-green-50/25;
+}
+
+.radio:checked,
+.radio[aria-checked='true'] {
+  @apply bg-jana-green-50;
+}
+
+.toggle:checked {
+  @apply border-jana-green-50 bg-jana-green-50 text-white;
+}
+
+// ---------------------------------------------------------------------- Card
+// Outline card: white surface, an ink-20 hairline, rounded-xl. A card that
+// is a link warms its edge to green on hover.
+.card {
+  @apply rounded-xl border border-jana-ink-20 bg-surface;
+}
+
+.card-body {
+  @apply p-4;
+}
+
+.card-title {
+  @apply font-display font-medium text-xl/8;
+}
+
+a.card,
+a.card-hover {
+  @apply transition-colors hover:border-jana-green-50 focus-visible:border-jana-green-50;
+}
+
+// DocuSeal's tinted blocks are Jana's wells.
+.bg-base-200.rounded-xl,
+.bg-base-200.rounded-2xl,
+.bg-base-200.rounded-lg {
+  @apply border border-jana-ink-20;
+}
+
+// ------------------------------------------------- Menus, dialogs, badges
+.dropdown-content,
+.menu.dropdown-content {
+  @apply rounded-xl border border-jana-ink-20 bg-surface shadow-lg;
+}
+
+.menu li > a,
+.menu li > button {
+  @apply rounded-lg font-medium;
+}
+
+.menu li > a:hover,
+.menu li > button:hover {
+  @apply bg-jana-ink-10 text-jana-ink-90;
+}
+
+.modal-box {
+  @apply rounded-xl bg-surface shadow-dialog;
+}
+
+.badge {
+  @apply rounded-full border-jana-ink-20 font-semibold;
+}
+
+.alert {
+  @apply rounded-xl border border-jana-ink-20;
+}
+
+.tooltip:before {
+  @apply rounded-lg font-medium;
+}
+
+.table th {
+  @apply text-xs/4 font-bold uppercase tracking-wide text-muted;
+}
+
+hr,
+.divider:before,
+.divider:after {
+  @apply border-jana-ink-20;
+}

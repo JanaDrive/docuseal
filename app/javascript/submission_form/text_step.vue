@@ -3,7 +3,7 @@
     v-if="showFieldNames && (field.name || field.title)"
     :for="field.uuid"
     dir="auto"
-    class="label text-xl sm:text-2xl py-0 mb-2 sm:mb-3.5 field-name-label"
+    class="block text-base/6 font-semibold text-jana-ink-90 mb-1.5 field-name-label"
     :class="{ 'mb-2': !field.description }"
   >
     <MarkdownContent
@@ -38,7 +38,7 @@
       v-model="text"
       :maxlength="cellsMaxLegth"
       dir="auto"
-      class="base-input !text-2xl w-full"
+      class="base-input w-full"
       :class="{ '!pr-11 -mr-10': !field.validation?.pattern }"
       :required="field.required"
       :pattern="field.validation?.pattern"
@@ -56,7 +56,7 @@
       ref="textarea"
       v-model="text"
       dir="auto"
-      class="base-textarea !text-2xl w-full"
+      class="base-textarea w-full"
       :aria-describedby="field.description ? field.uuid + '-desc' : undefined"
       :placeholder="`${t('type_here_')}${field.required ? '' : ` (${t('optional')})`}`"
       :required="field.required"

@@ -160,7 +160,7 @@
       {{ t('sign_now') }}
     </template>
     <template v-else-if="alwaysMinimize">
-      {{ t('next') }}
+      <span class="inline-block first-letter:uppercase">{{ t('next') }}</span>
     </template>
     <template v-else-if="isShowContinue">
       {{ t('continue') }}
@@ -179,7 +179,7 @@
     v-if="currentField"
     v-show="isFormVisible"
     id="form_container"
-    class="shadow-md bg-base-100 absolute bottom-0 w-full border-base-200 border p-4 rounded form-container overflow-hidden"
+    class="shadow-lg bg-surface absolute bottom-0 w-full border border-jana-ink-20 p-4 rounded-xl form-container overflow-hidden"
     :class="{ 'md:bottom-4': isBreakpointMd }"
     :style="{ backgroundColor: backgroundColor }"
   >
@@ -259,7 +259,7 @@
               v-if="showFieldNames && (currentField.name || currentField.title)"
               :for="currentField.uuid"
               dir="auto"
-              class="label text-xl sm:text-2xl py-0 mb-2 sm:mb-3.5 field-name-label"
+              class="block text-base/6 font-semibold text-jana-ink-90 mb-1.5 field-name-label"
               :class="{ 'mb-2': !currentField.description }"
             >
               <MarkdownContent
@@ -294,7 +294,7 @@
               :required="currentField.required"
               :aria-label="showFieldNames && (currentField.name || currentField.title) ? undefined : (currentField.name || currentField.title || t('select_your_option'))"
               :aria-describedby="currentField.description ? currentField.uuid + '-desc' : undefined"
-              class="select base-input !text-2xl w-full text-center font-normal"
+              class="select base-input w-full text-center font-normal"
               :class="{ 'text-gray-300': !values[currentField.uuid] }"
               :name="`values[${currentField.uuid}]`"
               @change="values[currentField.uuid] = $event.target.value"
@@ -323,7 +323,7 @@
               v-if="showFieldNames && (currentField.name || currentField.title)"
               :id="currentField.uuid + '-radio-label'"
               dir="auto"
-              class="label text-xl sm:text-2xl py-0 mb-2 sm:mb-3.5 field-name-label"
+              class="block text-base/6 font-semibold text-jana-ink-90 mb-1.5 field-name-label"
               :class="{ 'mb-2': !currentField.description }"
             >
               <MarkdownContent
@@ -615,7 +615,7 @@
                 class="mr-1 animate-spin"
                 aria-hidden="true"
               />
-              <span>
+              <span class="inline-block first-letter:uppercase">
                 {{ submitButtonText }}
               </span><span
                 v-if="isSubmitting"

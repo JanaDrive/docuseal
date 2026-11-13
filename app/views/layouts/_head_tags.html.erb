@@ -1,8 +1,9 @@
 <title>
-  <%= turbo_native_app? ? content_for(:native_title) : (content_for(:html_title) || (signed_in? ? 'DocuSeal' : 'DocuSeal | Open Source Document Signing')) %>
+  <%= turbo_native_app? ? content_for(:native_title) : (content_for(:html_title) || 'Jana') %>
 </title>
 <%= render 'shared/meta' %>
 <% if turbo_native_app? %>
   <meta name="turbo-cache-control" content="no-preview">
   <%= render 'layouts/native_styles' %>
 <% end %>
+<link rel="stylesheet" href="/fonts/jana-fonts.css">

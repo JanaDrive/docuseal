@@ -9,7 +9,7 @@
     >
       <label
         v-if="showFieldNames"
-        class="label text-xl sm:text-2xl py-0 field-name-label"
+        class="block text-base/6 font-semibold text-jana-ink-90 field-name-label"
       >
         <MarkdownContent
           v-if="field.title"
@@ -241,7 +241,7 @@
       v-if="isTextSignature && !modelValue && !computedPreviousValue && !computedPrefillData"
       id="signature_text_input"
       ref="textInput"
-      class="base-input !text-2xl w-full mt-6"
+      class="base-input w-full mt-6"
       :required="field.required && !isSignatureStarted"
       :aria-label="field.name || t('signature')"
       :placeholder="`${t('type_signature_here')}${field.required ? '...' : ' (' + t('optional') + ')'}`"
@@ -250,7 +250,7 @@
     >
     <select
       v-if="withSigningReason && !isOtherReason"
-      class="select base-input !text-2xl w-full mt-6 text-center"
+      class="select base-input w-full mt-6 text-center"
       :class="{ 'text-gray-300': !reason }"
       required
       :aria-label="t('select_a_reason')"
@@ -296,7 +296,7 @@
     </select>
     <input
       v-if="withSigningReason && isOtherReason"
-      class="base-input !text-2xl w-full mt-6"
+      class="base-input w-full mt-6"
       required
       :name="`values[${field.preferences.reason_field_uuid}]`"
       :aria-label="t('select_a_reason')"

@@ -1,5 +1,5 @@
 <template>
-  <label class="label text-xl sm:text-2xl py-0 mb-2 sm:mb-3.5 field-name-label">
+  <label class="block text-base/6 font-semibold text-jana-ink-90 mb-1.5 field-name-label">
     <MarkdownContent
       v-if="field.title"
       :string="field.title"

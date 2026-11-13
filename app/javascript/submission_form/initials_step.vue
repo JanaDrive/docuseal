@@ -6,7 +6,7 @@
     >
       <label
         v-if="showFieldNames"
-        class="label text-xl sm:text-2xl py-0 field-name-label"
+        class="block text-base/6 font-semibold text-jana-ink-90 field-name-label"
       >
         <MarkdownContent
           v-if="field.title"
@@ -169,7 +169,7 @@
       v-if="!isDrawInitials && !modelValue && !computedPreviousValue && !computedPrefillData"
       id="initials_text_input"
       ref="textInput"
-      class="base-input !text-2xl w-full mt-6 text-center"
+      class="base-input w-full mt-6 text-center"
       :required="field.required && !isInitialsStarted"
       :aria-label="field.name || t('initials')"
       :placeholder="`${t('type_initial_here')}${field.required ? '...' : ' (' + t('optional') + ')'}`"

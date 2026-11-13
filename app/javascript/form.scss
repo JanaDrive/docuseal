@@ -44,7 +44,7 @@ button[disabled] .enabled, button.btn-disabled .enabled {
 }
 
 .base-textarea {
-  @apply textarea textarea-bordered bg-white rounded-3xl;
+  @apply block rounded-lg border-0 text-base/6 font-medium text-jana-ink-80 placeholder:text-placeholder bg-surface shadow-inset outline outline-1 outline-offset-0 outline-jana-ink-30 transition-[background,box-shadow,outline-color] duration-200 ease-out focus:shadow-inset-deep focus:outline-1 focus:outline-offset-0 focus:outline-jana-green-50 focus:ring-4 focus:ring-jana-green-50/25 disabled:cursor-not-allowed disabled:bg-jana-ink-10 disabled:text-jana-ink-40 disabled:shadow-none min-h-[104px] py-2 px-3.5;
 }
 
 .btn {
@@ -52,15 +52,15 @@ button[disabled] .enabled, button.btn-disabled .enabled {
 }
 
 .base-input {
-  @apply input input-bordered bg-white;
+  @apply block rounded-lg border-0 text-base/6 font-medium text-jana-ink-80 placeholder:text-placeholder bg-surface shadow-inset outline outline-1 outline-offset-0 outline-jana-ink-30 transition-[background,box-shadow,outline-color] duration-200 ease-out focus:shadow-inset-deep focus:outline-1 focus:outline-offset-0 focus:outline-jana-green-50 focus:ring-4 focus:ring-jana-green-50/25 disabled:cursor-not-allowed disabled:bg-jana-ink-10 disabled:text-jana-ink-40 disabled:shadow-none min-h-10 py-2 px-4;
 }
 
 .base-button {
-  @apply btn btn-neutral text-white text-base;
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-5 py-2 min-h-10 text-base/6 font-bold whitespace-nowrap transition duration-200 ease-out select-none active:scale-[0.97] disabled:cursor-not-allowed disabled:active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jana-green-50/50 bg-jana-ink-80 text-white hover:bg-jana-ink-70 hover:text-white disabled:bg-jana-ink-20 disabled:text-jana-ink-40;
 }
 
 .white-button {
-  @apply btn btn-outline text-base bg-white border-2;
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-5 py-2 min-h-10 text-base/6 font-bold whitespace-nowrap transition duration-200 ease-out select-none active:scale-[0.97] disabled:cursor-not-allowed disabled:active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jana-green-50/50 bg-transparent text-jana-ink-70 ring-1 ring-inset ring-jana-ink-20 hover:bg-jana-ink-10 hover:ring-jana-ink-30 disabled:text-jana-ink-30 disabled:ring-jana-ink-10;
 }
 
 .base-checkbox {
@@ -78,3 +78,5 @@ button[disabled] .enabled, button.btn-disabled .enabled {
 .font-courier {
   font-family: "Courier New", Consolas, "Liberation Mono", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco;
 }
+
+@import "./jana/components";

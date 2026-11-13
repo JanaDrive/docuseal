@@ -3,7 +3,7 @@
     v-if="showFieldNames && (field.name || field.title)"
     :for="field.uuid"
     dir="auto"
-    class="label text-xl sm:text-2xl py-0 mb-2 sm:mb-3.5 field-name-label"
+    class="block text-base/6 font-semibold text-jana-ink-90 mb-1.5 field-name-label"
     :class="{ 'mb-2': !field.description }"
   >
     <MarkdownContent
@@ -43,7 +43,7 @@
       :step="field.validation?.step || 'any'"
       :min="field.validation?.min"
       :max="field.validation?.max"
-      class="base-input !text-2xl w-full"
+      class="base-input w-full"
       :required="field.required"
       :aria-describedby="field.description ? field.uuid + '-desc' : undefined"
       :placeholder="`${t('type_here_')}${field.required ? '' : ` (${t('optional')})`}`"
